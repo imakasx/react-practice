@@ -1,6 +1,11 @@
+import Hello from './hello.jsx'
+
 function App() {
   return ( 
-    <h1>hello world</h1>
+    <>
+    <Hello />
+    <p>this is a paragraph</p>
+    </>
   )
 }
 
