@@ -5,16 +5,36 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+let [count , setcounter] = useState(0)
+
+// let count = 5
+    const value = ()=>{
+      if(count <= 19){
+        count = count + 1;
+        setcounter(count)
+      }
+    }
+    const decrese = ()=>{
+      if(count > 0){
+        count = count - 1
+        setcounter(count)
+      }
+    }
 
   return (
+
     <>
       <h1>This is react</h1>
-      <h2>Counter value: 5</h2>
+      <h2>Counter value: {count}</h2>
 
-      <button>Add value</button>
+      <button
+      onClick={value}
+      >Add value</button>
       <br />
-      <button>Remove value</button>
+      <button 
+      onClick={decrese}
+      >Remove value</button>
     </>
   )
 }
