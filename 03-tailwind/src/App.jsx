@@ -6,10 +6,16 @@ import './App.css'
 import Card from '../components/card'
 
 function App() {
+
+  let myObj ={
+    name:"akash",
+    age:21
+  }
   return (
     <>
       <h1 className='bg-green-800 text-black p-4 rounded-3xl'>Tailwind CSS</h1>
     
+    <Card channel="akash with code"  userDe = {myObj}/>
     <Card />
     </>
   )
