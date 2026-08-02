@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createElement, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -10,10 +10,10 @@ let [count , setcounter] = useState(0)
 
 // let count = 5
     const value = ()=>{
-      if(count <= 19){
-        count = count + 1;
-        setcounter(count)
-      }
+        setcounter(counter =>counter + 1)
+        setcounter(counter =>counter + 1)
+        setcounter(counter =>counter + 1)
+        setcounter(counter =>counter + 1)
     }
     const decrese = ()=>{
       if(count > 0){
@@ -25,8 +25,9 @@ let [count , setcounter] = useState(0)
   return (
 
     <>
+   
       <h1>This is react</h1>
-      <h2>Counter value: {count}</h2>
+      <h2>Counter value: {count} </h2>
 
       <button
       onClick={value}
@@ -35,6 +36,9 @@ let [count , setcounter] = useState(0)
       <button 
       onClick={decrese}
       >Remove value</button>
+      <br />
+     
+      <p>Footer : {count} </p>
     </>
   )
 }
