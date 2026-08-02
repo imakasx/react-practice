@@ -1,7 +1,8 @@
 import React from "react";
 
-function Card(props) {
-    console.log("props", props)
+function Card({username , onclick= "visit me"}) {
+    console.log(username)
+
   return (
     <div className="w-60 flex flex-col rounded-xl bg-black min-h-[19rem] text-white">
         <div>
@@ -13,13 +14,15 @@ function Card(props) {
         </div>
         <div className="flex flex-col py-3 px-3 pb-10">
         <div className="flex justify-between ">
-            <h1 className="font-bold ">Bored ape nft accidental</h1>
+            <h1 className="font-bold " >{username}</h1>
             <h1>Price</h1>
         </div>
         <div className="flex  justify-between">
             <p>#345</p>
             <p>0.01</p>
+            
         </div>
+        <button className="bg-amber-700  mx-19 rounded-xs">{onclick}</button>
         </div>
     </div>
     );

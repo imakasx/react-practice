@@ -11,12 +11,13 @@ function App() {
     name:"akash",
     age:21
   }
+  let newArray = [1,2,3,4,5]
   return (
     <>
       <h1 className='bg-green-800 text-black p-4 rounded-3xl'>Tailwind CSS</h1>
     
-    <Card channel="akash with code"  userDe = {myObj}/>
-    <Card />
+    <Card username = "akash"/>
+    <Card username = "Rahul" onclick="click me"/>
     </>
   )
 }
