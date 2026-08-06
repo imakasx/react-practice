@@ -1,24 +1,29 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
   const [length, setlength] = useState(8)
-  const [char, setchar] = useState(false)
   const [num, setnum] = useState(false)
+  const [char, setchar] = useState(false)
   const [pass, setpass] = useState("")
 
-  const PasswordGen = useCallback(()=>{
-    let Password = "";
+  const PasswordGen = useCallback(()=> {
+    let password = " ";
     let str = "ABCDEFGHIZKLMNOPQSTRUVWXYZabxdefghizklmnopqrstuvwxyz";
-    if(num)str += "0123456789";
-    if(num)char += "[]+_!@#$%^&*{}~";
+    if(num) str += "0123456789" 
+    if(char) str += "!@#$%^&*-_+=[]{}~`"
+
     
-    for (let i = 1; i <= array.length; i++) {
+    for (let i = 1; i <= length; i++) {
       let word = Math.floor(Math.random() * str.length + 1)
-      Password += str.charAt(word)
+      password += str.charAt(word)
     }
-    setpass(Password) 
+    setpass(password) 
     },[length, setchar, setpass, setnum])
+    
+    useEffect(()=>{ 
+      PasswordGen()
+    } , [length, char, num, PasswordGen])
 
   return (
   <>
@@ -28,7 +33,7 @@ function App() {
     <div className='flex shadow rounded-lg overflow-hidden mt-4'>
       
       <input type="text" 
-      value={PasswordGen} 
+      value={pass} 
       placeholder='Password' 
       className='bg-white w-full outline-none '
       readOnly 
@@ -66,10 +71,10 @@ function App() {
         id="charInput"
         defaultChecked={char}
         onChange={()=>{
-          setnum((prev)=> !prev)
+          setchar((prev)=> !prev)
         }}
         />
-        <label htmlFor="numberInput">Charecter</label>
+        <label htmlFor="charInput">Charecter</label>
       </div>
       
     </div>
