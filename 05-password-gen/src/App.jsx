@@ -28,7 +28,8 @@ function App() {
 
     const copypass = useCallback(()=>{
       passRef.current?.select();
-
+      passRef.current?.setSelectionRange(0, 99)
+      window.navigator.clipboard.writeText(pass)
     }, [pass])
 
 
