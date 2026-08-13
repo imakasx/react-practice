@@ -7,6 +7,7 @@ function App() {
   const [char, setchar] = useState(false)
   const [pass, setpass] = useState("")
   const passRef = useRef(null)
+  const [click , setclick] = useState(false)
 
   const PasswordGen = useCallback(()=> {
     let password = " ";
@@ -27,6 +28,10 @@ function App() {
     } , [length, char, num, PasswordGen])
 
     const copypass = useCallback(()=>{
+      setclick(true)
+      setTimeout(() => {
+        setclick(false)
+      }, 500);
       passRef.current?.select();
       passRef.current?.setSelectionRange(0, 99)
       window.navigator.clipboard.writeText(pass)
@@ -48,9 +53,11 @@ function App() {
       ref={passRef}
       />
       <button 
-      className='bg-blue-700 text-white px-4 py-1.5  shrink-0'
+      className= {`bg-blue-700 text-white px-4 py-1.5 shrink-0 transition-all duration-200 ${
+        click ? 'bg-green-600 scale-95' : ''
+      }`}
       onClick={copypass}
-      >Copy</button>
+      >{click ? 'copied' : 'copy'}</button>
     </div>
     <div className='flex text-sm gap-x-2'>
       <div className='flex items-center gap-x-1'>
