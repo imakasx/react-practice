@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import {Input} from './components'
+import currencyInfo from './hooks/currencyInfo'
 
 function App() {
   return (
