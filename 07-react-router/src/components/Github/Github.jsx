@@ -13,7 +13,10 @@ function Github() {
    
 
     return(
-        <div>Github : {Data.followers}</div>
+        <div className="text-center">
+            Github : {Data.followers}
+            <img src={Data.avatar_url} alt="Git picuture" />
+        </div>
     )
 }
 export default Github
