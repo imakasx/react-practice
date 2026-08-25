@@ -29,7 +29,9 @@ function App() {
     }
 
   },[])
-  useEffect(()=>{})
+  useEffect(()=>{
+    localStorage.setItem("todos" , JSON.stringify(todos))
+  },[todos])
 
 
 
