@@ -20,7 +20,7 @@ function App() {
   }
 
   const toggleComplete = (id)=>{
-    console.log(id)
+    // console.log(id)
     setTodos((prev)=> 
       prev.map((prevTodo)=>
       prevTodo.id === id?{...prevTodo, completed:!prevTodo.completed } : prevTodo))
@@ -30,7 +30,7 @@ function App() {
   useEffect(()=>{
     const todos = JSON.parse(localStorage.getItem("todos"))
     if(todos && todos.length > 0){
-      setTodos(todos)
+     setTodos(todos)
     }
 
   },[])
