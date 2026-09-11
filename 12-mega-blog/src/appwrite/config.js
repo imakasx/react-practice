@@ -66,6 +66,18 @@ export class AppwriteService {
             return false
         }
     }
+    async getPost(slug){
+        try{
+            return await this.databases.getDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug
+            )
+        }catch(error){
+            console.log("Appwrite service :: getPost :: error", error)
+            return false
+        }
+    }
 }
 const Service = new Service();
 export default Service
