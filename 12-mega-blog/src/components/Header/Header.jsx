@@ -1,6 +1,6 @@
-export default function Header(){
+function Header() {
     return(
         <div>Header</div>
-
     )
 }
+export default Header
