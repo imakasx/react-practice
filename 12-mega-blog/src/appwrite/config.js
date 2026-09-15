@@ -7,8 +7,8 @@ export class AppwriteService {
     bucket;
     constructor(){
         this.clinet
-        .setEndpoint(Conf.appwriteUrl)
-        .setProject(Conf.appwriteProjectId);
+        .setEndpoint(conf.appwriteUrl)
+        .setProject(conf.appwriteProjectId);
         this.databases = new Databases(this.clinet);
         this.bucket = new Storage(this.clinet);
     }
