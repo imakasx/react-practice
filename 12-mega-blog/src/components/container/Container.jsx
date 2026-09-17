@@ -1,5 +1,9 @@
-function Container(){
+import React from "react"
+
+function Container({childern}){
     return(
-        <div>container</div>
+        <div className="w-full max-w-7xl mx-auto px-4">
+            {children}container</div>
     )
 }
+export default Container
