@@ -34,6 +34,18 @@ function Header() {
     },
 ];
 
-return <div>Header</div>;
+return(
+
+    <header className="py-3 shodow bg-gray-500">
+        <Container>
+            <nav className="flex">
+                <div className="mr-4">
+
+                </div>
+            </nav>
+        </Container>
+    </header>
+    
+) 
 }
 export default Header;
