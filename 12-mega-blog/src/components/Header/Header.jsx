@@ -44,6 +44,17 @@ return(
                     <Logo width="70px"/>
                     </Link>
                 </div>
+                <ul className="flex ml-auto">
+                    { navItem.map((item) => 
+                    item.active ? (
+                        <li key={item.name}>
+                            <button onClick={()=> navigate(item.slug)}>
+                                {item.name}
+                            </button>
+                        </li>
+                    ) : null
+                    )}
+                </ul>
             </nav>
         </Container>
     </header>
