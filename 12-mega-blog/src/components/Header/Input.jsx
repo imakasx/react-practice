@@ -1,5 +1,7 @@
+import React , {useId} from "react"
 
-function Input(){
+function Input({}){
+    const id = useId()
     return(
         <div>Input</div>
     )
