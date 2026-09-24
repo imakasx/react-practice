@@ -14,6 +14,9 @@ const Input = React.forwardRef(function input({
         htmlFor={id}>
             {label}
             </label>}
+            <input type={text}
+            className={`${className}`}
+             />
     </div>
     )
 })
