@@ -29,7 +29,9 @@ function Login(){
 
 
     return(
-        <div>Login</div>
+        <div className="flex items-center justify-center w-full">
+            <div className="mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10"></div>
+        </div>
     )
 }
 export default Login
