@@ -48,7 +48,20 @@ function Login(){
                     </Link>
         </p>
         {error && <p className="text-red-500 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(login)}></form>
+        <form onSubmit={handleSubmit(login) } className="mt-8" >
+            <div className="space-y-5">
+                <Input
+                label="Email"
+                type="email"
+                placeholder="Enter your email"
+                {...register("email", { required: true, 
+                    validate:{ matchPattren:(value)=> /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        "Email address must be a valid address" }
+                })}>
+                </Input> 
+
+            </div>
+        </form>
         </div>
     )
 }
