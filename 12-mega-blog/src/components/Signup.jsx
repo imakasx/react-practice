@@ -9,7 +9,21 @@ function Signup() {
     const [error, setError] = useState("")
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
-    
+
+    const create = async(data)=>{
+        setError("")
+        try{
+            const userData = await authService.createAccount(data)
+            if(userData) {
+                const userData = await authService.getCurrentUser()
+                if(userData) dispatch(login(userData))  
+                    navigate("/")
+            }
+        }catch(error){
+            setError(error.message)
+        }
+    }
+
     return (
     <div>Signup</div>
     )
