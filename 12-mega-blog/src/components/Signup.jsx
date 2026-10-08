@@ -74,7 +74,7 @@ function Signup() {
                         type="submit"
                         className="w-full rounded-lg bg-primary px-6 py-3 text-lg font-semibold text-white outline-none ring-offset-2 transition-all focus-visible:ring-2"
                         >
-                        Create Account
+                        Sign Up
                         </button>
                     </div>
                 </form>
