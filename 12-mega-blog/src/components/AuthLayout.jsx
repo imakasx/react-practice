@@ -1,7 +1,6 @@
 import React from "react";
- function AuthLayout(){
+export default function Protected({children , authentication= true}) {
     return(
         <Div>Authlayout</Div>
     )
- }
- export default AuthLayout
+}
