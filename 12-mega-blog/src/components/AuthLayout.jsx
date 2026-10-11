@@ -16,7 +16,7 @@ export default function Protected({children , authentication = true}) {
             navigate("/login")
         }
 
-
+        let authValue = authentication === true ? true : false
 
         if(authentication && authStatus !== authentication) {
             navigate("/login")
@@ -29,7 +29,5 @@ export default function Protected({children , authentication = true}) {
     
     
     
-    return(
-        <div>Authlayout</div>
-    )
+    return loader ? <h1>Loading...</h1> :<>{children}</> 
 }
