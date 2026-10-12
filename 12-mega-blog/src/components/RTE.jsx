@@ -1,8 +1,14 @@
 import React from 'react';
-function RTE() {
+import { Editor } from '@tinymce/tinymce-react';
+import {Controller} from "react-hook-form";
+
+function RTE({name, control, label , defaultValue=" "}) {
     return (
-        <div>
-            <h1>Rich Text Editor</h1>
+        <div className='w-full'>
+            {label && <label className='block text-sm font-medium text-gray-700 mb-1'>
+                {label}</label>}
+
+                <Controller/>
         </div>
     )
 }
