@@ -13,10 +13,35 @@ function RTE({name, control, label , defaultValue=" "}) {
                 control={control}
                 render={({ field:{onChange} }) => (
                     <Editor
+                        initialValue={defaultValue}
                         init={{
-                            height: 300,
-                            menubar: false,
-                            plugins: 'lists link image table code help wordcount'
+                            initialValue: defaultValue,
+                            height: 500,
+                            menubar: true,
+                            plugins: [
+                                        "image",
+                                        "advlist",
+                                        "autolink",
+                                        "lists",
+                                        "link",
+                                        "image",
+                                        "charmap",
+                                        "preview",
+                                        "anchor",
+                                        "searchreplace",
+                                        "visualblocks",
+                                        "code",
+                                        "fullscreen",
+                                        "insertdatetime",
+                                        "media",
+                                        "table",
+                                        "code",
+                                        "help",
+                                        "wordcount",
+                                        "anchor",
+                                    ],
+                                    toolbar:
+                                    ""
                         }}
                         onEditorChange={onChange}
                     />
