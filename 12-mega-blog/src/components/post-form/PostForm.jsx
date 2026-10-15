@@ -18,6 +18,19 @@ function PostForm({post}) {
         }
     });
 
+    const navigate = useNavigate();
+    const userData = useSelector((state) => state.auth.userData);
+
+    const submit = async (data) => {
+        if(post) {
+            data.image[0] ? appwriteService.uploadFile(data.image[0]) : null;
+
+            if(file){
+                appwriteService.deleteFile(post.featuredImage)
+            }
+        }
+    }
+
     return(
         <div>Post Form</div>
     )
