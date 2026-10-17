@@ -63,7 +63,17 @@ function PostForm({post}) {
         
     },[])
 
-    React.useEffect(() => {},[watch("title"),slugTranform,setValue]);
+    React.useEffect(() => {
+        const subscription = watch((value,{name})=>{
+            if(name === "title"){
+                setValue("slug", slugTranform(value.title))
+            }
+        })
+
+        return () => {
+            subscription.unsubscribe()    
+        }
+    },[watch("title"),slugTranform,setValue]);
 
     return(
         <div>Post Form</div>
