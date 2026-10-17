@@ -63,6 +63,8 @@ function PostForm({post}) {
         
     },[])
 
+    React.useEffect(() => {},[watch("title"),slugTranform,setValue]);
+
     return(
         <div>Post Form</div>
     )
