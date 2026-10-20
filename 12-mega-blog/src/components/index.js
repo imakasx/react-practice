@@ -6,6 +6,7 @@ import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
+import AddPost from "../pages/AddPost";
 
 export { Header,
         Footer, 
@@ -14,6 +15,7 @@ export { Header,
         LogoutBtn,
         RTE,
         Signup,
-        Login
+        Login,
+        AddPost
 
     };
