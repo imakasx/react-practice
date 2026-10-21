@@ -17,6 +17,7 @@ export { Header,
         RTE,
         Signup,
         Login,
-        AddPost
+        AddPost,
+        PostForm
 
     };
