@@ -8,6 +8,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import AddPost from "../pages/AddPost";
 import PostForm from "./post-form/PostForm";
+import Postcard from "./Postcard";
 
 export { Header,
         Footer, 
@@ -18,6 +19,7 @@ export { Header,
         Signup,
         Login,
         AddPost,
-        PostForm
+        PostForm,
+        Postcard
 
     };
