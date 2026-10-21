@@ -7,6 +7,7 @@ import RTE from "./RTE";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import AddPost from "../pages/AddPost";
+import PostForm from "./post-form/PostForm";
 
 export { Header,
         Footer, 
