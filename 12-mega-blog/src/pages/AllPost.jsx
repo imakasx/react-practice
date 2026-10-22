@@ -4,7 +4,10 @@ import {Container, Postcard} from "../components";
 
 function AllPost(){
 
-    
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {},[])
+    appwriteService.getPosts([]).then((posts) => setPosts(posts))
+
     return(
         <div>AllPost</div>
     )
