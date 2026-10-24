@@ -21,7 +21,7 @@ function EditPost(){\
     },[slug, navigate])
 
     return(
-        <div>Edit Post</div>
+        <div className="p-8">Edit Post</div>
     )
 }
 export default EditPost
