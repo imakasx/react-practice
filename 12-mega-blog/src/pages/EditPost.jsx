@@ -20,8 +20,12 @@ function EditPost(){\
         }
     },[slug, navigate])
 
-    return(
-        <div className="p-8">Edit Post</div>
-    )
+    return posts ? (
+        <div className="py-8">
+            <Container>
+                <PostForm post={posts} />
+            </Container>
+        </div>
+    ): null
 }
 export default EditPost
