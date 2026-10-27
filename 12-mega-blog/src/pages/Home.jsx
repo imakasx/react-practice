@@ -29,7 +29,18 @@ function Home() {
         )
     }
     return(
-        
+        <div>
+            <Container>
+                <div>
+                    {posts.map((post)=>(
+                        <div>
+                            <PostCard {}/>
+                        </div>
+                    ))}
+                </div>
+            </Container>
+        </div>
+
     )
 }
 
