@@ -21,6 +21,7 @@ import App from './App.jsx'
 import {Provider} from 'react-redux'
 import { store } from './store/store.js'
 import { createBrowserRouter } from 'react-router-dom'
+import { AuthLayout } from './components/index.js'
 
 const router = createBrowserRouter([
   {
@@ -33,8 +34,14 @@ const router = createBrowserRouter([
       },
       {
         path:"/login",
-        element:()
+        element:(
+          <AuthLayout authentication={false}>
+            <Login />
+          </AuthLayout>
+          
+        )
       }
+
     ]
   }
 ])
