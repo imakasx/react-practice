@@ -20,6 +20,9 @@ import './index.css'
 import App from './App.jsx'
 import {Provider} from 'react-redux'
 import { store } from './store/store.js'
+import { createBrowserRouter } from 'react-router-dom'
+
+const router = createBrowserRouter([])
 
 ReactDom.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
