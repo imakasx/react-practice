@@ -3,7 +3,8 @@ import {Signup as SignupComponent} from "../components/index"
 import authService from '../appwrite/auth'
 import {Link ,useNavigate} from 'react-router-dom'
 import {login} from '../store/authSlice'
-import {Button, Input, Logo} from './index.js'
+// import {Logo} from './index.js'
+import{Logo} from '../components/index'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form' 
 
