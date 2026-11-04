@@ -11,6 +11,7 @@ import PostForm from "./post-form/PostForm";
 import Postcard from "./Postcard";
 import AuthLayout from "./AuthLayout"
 import Button from "./Botton";
+import Input from "./Input";
 
 export { Header,
         Footer, 
@@ -25,5 +26,7 @@ export { Header,
         Postcard,
         AuthLayout,
         Button,
+        Input,
+
 
     };
