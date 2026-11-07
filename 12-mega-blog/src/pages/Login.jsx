@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { login as authLogin } from '../store/authSlice'
-import {Button, Input, Logo} from "./index"
+import Button from "../components/Botton"
+import Input from "../components/Input"
+import Logo from "../components/Logo"
 import {useDispatch} from "react-redux"
 import authService from "../appwrite/auth"
 import {useForm} from "react-hook-form"
@@ -9,7 +11,7 @@ import {useForm} from "react-hook-form"
 function Login() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit, formState: {errors}} = useForm()
     const [error, setError] = useState("")
 
     const login = async(data) => {
@@ -18,7 +20,7 @@ function Login() {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
-                if(userData) dispatch(authLogin(userData));
+                if(userData) dispatch(authLogin({ userData }));
                 navigate("/")
             }
         } catch (error) {
@@ -54,21 +56,23 @@ function Login() {
                 placeholder="Enter your email"
                 type="email"
                 {...register("email", {
-                    required: true,
+                    required: "Email is required",
                     validate: {
-                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        matchPattern: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ||
                         "Email address must be a valid address",
                     }
                 })}
                 />
+                {errors.email && <p className="text-sm text-red-600">{errors.email.message}</p>}
                 <Input
                 label="Password: "
                 type="password"
                 placeholder="Enter your password"
                 {...register("password", {
-                    required: true,
+                    required: "Password is required",
                 })}
                 />
+                {errors.password && <p className="text-sm text-red-600">{errors.password.message}</p>}
                 <Button
                 type="submit"
                 className="w-full"
