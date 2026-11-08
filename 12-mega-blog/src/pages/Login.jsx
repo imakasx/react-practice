@@ -28,7 +28,7 @@ function Login() {
         }
     }
 
-  return (
+return (
     <div
     className='flex items-center justify-center w-full'
     >
@@ -81,7 +81,7 @@ function Login() {
         </form>
         </div>
     </div>
-  )
+    )
 }
 
 export default Login

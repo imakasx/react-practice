@@ -22,7 +22,7 @@ function AllPosts() {
             </div>
             </Container>
     </div>
-  )
+    )
 }
 
 export default AllPosts
