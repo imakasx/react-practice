@@ -10,9 +10,11 @@ function RTE({name, control, label , defaultValue=" "}) {
                 <Controller
                 name={name || "content"}
                 control={control}
-                render={({ field:{onChange} }) => (
+                render={({ field }) => (
                     <Editor
-                        initialValue={defaultValue}
+                        value={field.value || ""}
+                        onEditorChange={(content) => field.onChange(content)}
+                        onBlur={field.onBlur}
                         init={{
                             initialValue: defaultValue,
                             height: 500,
@@ -43,7 +45,6 @@ function RTE({name, control, label , defaultValue=" "}) {
                                     "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
                                     content_style: "body {font-family:Helvetica,Arial,sans-serif; font-size:14px }"
                         }}
-                        onEditorChange={onChange}
                     />
                 )}
                 />
