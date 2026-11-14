@@ -16,6 +16,8 @@ import Input from './Input'
 
 import Select from './Select'
 
+const PostCard = Postcard
+
 export {
   Header,
   Footer,
@@ -28,6 +30,7 @@ export {
   AddPost,
   PostForm,
   Postcard,
+  PostCard,
   AuthLayout,
   Button,
   Input,
