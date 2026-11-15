@@ -7,11 +7,20 @@ export class AuthService {
   account
 
   constructor() {
+    if (!conf.appwriteUrl || !conf.appwriteProjectId) {
+      this.account = null
+      return
+    }
+
     this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId)
     this.account = new Account(this.client)
   }
 
   async createAccount({ email, password, name }) {
+    if (!this.account) {
+      return null
+    }
+
     try {
       const userAccount = await this.account.create(ID.unique(), email, password, name)
       if (userAccount) {
@@ -24,6 +33,10 @@ export class AuthService {
   }
 
   async login({ email, password }) {
+    if (!this.account) {
+      return null
+    }
+
     try {
       return await this.account.createEmailSession(email, password)
     } catch (error) {
@@ -32,6 +45,10 @@ export class AuthService {
   }
 
   async getCurrentUser() {
+    if (!this.account) {
+      return null
+    }
+
     try {
       return await this.account.get()
     } catch (error) {
@@ -41,6 +58,10 @@ export class AuthService {
   }
 
   async logout() {
+    if (!this.account) {
+      return
+    }
+
     try {
       await this.account.deleteSessions()
     } catch (error) {
