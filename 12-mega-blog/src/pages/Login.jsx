@@ -72,7 +72,7 @@ return (
                     required: "Password is required",
                 })}
                 />
-                {errors.password && <p className="text-sm text-red-600">{errors.password.message}</p>}
+                {errors.password && <p className="text-sm text-red-700">{errors.password.message}</p>}
                 <Button
                 type="submit"
                 className="w-full"
