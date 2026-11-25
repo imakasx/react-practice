@@ -49,7 +49,7 @@ export default function Post() {
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button bgColor="bg-red-600" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
